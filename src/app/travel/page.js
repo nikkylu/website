@@ -12,6 +12,8 @@ import { ArrowLeft } from 'lucide-react';
 //   { id: "12164584259" },
 //   { id: "12157675374" }, 
 // ];
+const basePath =
+  process.env.NODE_ENV === 'production' ? '/website' : ''
 
 const getPhotos = () => {
   const photosDirectory = path.join(process.cwd(), 'public/photos/travel');
@@ -49,6 +51,50 @@ export default function Travel() {
 
           <section className="mb-8">
             <p>Trying to put my experience into words. Will update when I have more time.</p>
+            {/* <p className='font-bold'>May 2026:</p>
+            <p className='pl-8'>
+              where to go next
+            </p>
+            <p className='font-bold'>Mar 2026:</p>
+            <p className='pl-8'>
+              Attempted winter Mt. Katahdin in Maine.
+            </p>
+            <p className='font-bold'>Jan 2026:</p>
+            <p className='pl-8'>
+              Soloed Mt. Tanigawa, Japan. 
+            </p>
+            <p className='font-bold'>Jan 2026:</p>
+            <p className='pl-8'>
+              Climbing in Yangshuo, China.  
+            </p>
+            <p className='font-bold'>Dec 2025:</p>
+            <p className='pl-8'>
+              Tokyo, Japan. 
+            </p>
+            <p className='font-bold'>August 2025:</p>
+            <p className='pl-8'>
+              Immersed myself in the Disneyland for mountaineers, Chamonix, France. 
+            </p>
+            <p className='font-bold'>June-July 2025:</p>
+            <p className='pl-8'>
+              Spent a month in Spain. Madrid, the Pyrenees, Mallorca, mostly in Barcelona.
+            </p>
+            <p className='font-bold'>May-June 2025:</p>
+            <p className='pl-8'>
+              Spent a month in the Andean mountains in Peru. Hiked in the Cordillera Blanca and Huayhuash. Summited PD+ 5k Peak. Again had great food in Lima. 
+            </p>
+            <p className='font-bold'>Apr 2025:</p>
+            <p className='pl-8'>
+              Drove from NYC to Montreal.
+            </p>
+            <p className='font-bold'>Mar 2025:</p>
+            <p className='pl-8'>
+              Drove around Morocco in manual car. Hiked in the Atlas mountains. Climbed the Gorges. Explored the Sahara desert.
+            </p>
+            <p className='font-bold'>Dec 2024:</p>
+            <p className='pl-8'>
+              Tokyo and Hakone, Japan. Did a 10km night hike across Tokyo during midnight(?).
+            </p>
             <p className='font-bold'>Aug 2024:</p>
             <p className='pl-8'>
               I spent the month backpacking the Nordic countries. I drove 1540km around Iceland and hiked
@@ -97,7 +143,7 @@ export default function Travel() {
             <p className='font-bold'>May 2022:</p>
             <p className='pl-8'>
               Went to Cannes film festival. Lived in Paris for 2 months.
-            </p>
+            </p> */}
 
 
             {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
@@ -121,7 +167,7 @@ export default function Travel() {
             {photos.map((photo, index) => (
                 <div key={index} className="relative w-full overflow-hidden">
                 <Image
-                    src={photo}
+                    src={`${basePath}${photo}`}
                     alt={`Travel Photo ${index + 1}`}
                     layout="responsive"
                     width={3}

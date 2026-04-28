@@ -4,6 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 
+const basePath =
+  process.env.NODE_ENV === 'production' ? '/website' : ''
+
+  
 const getPhotos = () => {
   const photosDirectory = path.join(process.cwd(), 'public/photos/memory');
   return fs.readdirSync(photosDirectory)
@@ -23,16 +27,16 @@ export default function Photos() {
         </Link>
 
         <h1 className="text-4xl font-bold mb-8 text-primary">Water (2024)</h1>
-        {/* <div className='mb-4'>
+        <div className='mb-4'>
         <p className=" text-primary">
             The proximity to a vast water body has been a defining anchor in my life since childhood.</p>
          <p className=" text-primary">  I almost never photo humans, but I would like to be with water together this time.</p>
-        </div> */}
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {photos.map((photo, index) => (
             <div key={index} className="relative w-full overflow-hidden">
               <Image
-                src={photo}
+                src={`${basePath}${photo}`}
                 alt={`Memory Photo ${index + 1}`}
                 layout="responsive"
                 width={3}

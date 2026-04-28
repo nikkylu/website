@@ -12,6 +12,11 @@ import { ArrowLeft } from 'lucide-react';
 //     console.log('Photos:', files);
 // };
 
+const basePath =
+  process.env.NODE_ENV === 'production' ? '/website' : ''
+
+  
+
 const getPhotos = () => {
   const photosDirectory = path.join(process.cwd(), 'public/photos/world');
   const files = fs.readdirSync(photosDirectory);
@@ -48,7 +53,7 @@ export default function Photos() {
           {photos.map((photo, index) => (
             <div key={index} className="relative w-full overflow-hidden">
               <Image
-                src={photo}
+                src={`${basePath}${photo}`}
                 alt={`Memory Photo ${index + 1}`}
                 layout="responsive"
                 width={3}

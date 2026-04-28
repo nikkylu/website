@@ -4,6 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 
+
+const basePath =
+  process.env.NODE_ENV === 'production' ? '/website' : ''
+
 const getPhotos = () => {
   const photosDirectory = path.join(process.cwd(), 'public/photos/memory');
   return fs.readdirSync(photosDirectory)
@@ -46,7 +50,7 @@ export default function Photos() {
           {photos.map((photo, index) => (
             <div key={index} className="relative aspect-[4/3] w-full overflow-hidden">
               <Image
-                src={photo}
+                src={`${basePath}${photo}`}
                 alt={`Memory Photo ${index + 1}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
