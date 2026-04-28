@@ -116,7 +116,8 @@ export default function Home() {
             </div>
 
             <nav className="space-y-2 text-accent font-bold">
-              <Link href="/photos" className="block hover:underline">Art Projects</Link>
+
+              <Link href="https://nikkylu.art" className="block hover:underline">Art Projects</Link>
               <Link href="/travel" className="block hover:underline">Travel Log</Link>
               <a 
                 href="https://drive.google.com/file/d/1R3oGjNyKQ1AKQ5x8avMtou_ZKsxLyf-s/view?usp=sharing" 
