@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 // import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
+import VisitedMap from '../../components/VisitedMap';
 
 // const stravaActivities = [
 //   { id: "12173452807" },
@@ -48,6 +49,10 @@ export default function Travel() {
 
         <article className="prose prose-lg max-w-none text-primary">
           <h1 className="text-4xl font-bold mb-6">Travel</h1>
+
+          <section className="mb-12">
+            <VisitedMap />
+          </section>
 
           <section className="mb-8">
             <p>Trying to put my experience into words. Will update when I have more time.</p>

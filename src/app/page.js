@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Github, Twitter, Mail, Linkedin, ExternalLink } from 'lucide-react'
+import VisitedMap from '../components/VisitedMap'
 const basePath =
   process.env.NODE_ENV === 'production' ? '/website' : ''
 
@@ -147,6 +148,8 @@ export default function Home() {
             <div className="text-primary">
               <p className="font-mono text-sm">nikky.lu@brown.edu</p>
             </div>
+
+            <VisitedMap mini />
           </div>
 
           {/* Right column */}
